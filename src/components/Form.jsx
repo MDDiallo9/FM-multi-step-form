@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 const Form = (props) => {
-    const [isChecked, setIsChecked] = useState(false)
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
-    setIsChecked(!isChecked)
-  }
+    setIsChecked(!isChecked);
+  };
   const page1 = (
     <>
       <h2 className="text-2xl font-bold text-[--Marine-blue]">Personal Info</h2>
@@ -82,8 +82,12 @@ const Form = (props) => {
                 Arcade
               </h3>
               <div>
-                  <p className="text-xs text-[--Cool-gray]">{!isChecked ? "$9/mo" : "$90/yr"}</p>
-                  <p className="text-xs text-[--Marine-blue]">{!isChecked ? null : "2 months free"}</p>
+                <p className="text-xs text-[--Cool-gray]">
+                  {!isChecked ? "$9/mo" : "$90/yr"}
+                </p>
+                <p className="text-xs text-[--Marine-blue]">
+                  {!isChecked ? null : "2 months free"}
+                </p>
               </div>
             </div>
           </div>
@@ -105,8 +109,12 @@ const Form = (props) => {
                 Advanced
               </h3>
               <div>
-                  <p className="text-xs text-[--Cool-gray]">{!isChecked ? "$12/mo" : "$120/yr"}</p>
-                  <p className="text-xs text-[--Marine-blue]">{!isChecked ? null : "2 months free"}</p>
+                <p className="text-xs text-[--Cool-gray]">
+                  {!isChecked ? "$12/mo" : "$120/yr"}
+                </p>
+                <p className="text-xs text-[--Marine-blue]">
+                  {!isChecked ? null : "2 months free"}
+                </p>
               </div>
             </div>
           </div>
@@ -128,45 +136,75 @@ const Form = (props) => {
                 Pro
               </h3>
               <div>
-                  <p className="text-xs text-[--Cool-gray]">{!isChecked ? "$15/mo" : "$150/yr"}</p>
-                  <p className="text-xs text-[--Marine-blue]">{!isChecked ? null : "2 months free"}</p>
+                <p className="text-xs text-[--Cool-gray]">
+                  {!isChecked ? "$15/mo" : "$150/yr"}
+                </p>
+                <p className="text-xs text-[--Marine-blue]">
+                  {!isChecked ? null : "2 months free"}
+                </p>
               </div>
             </div>
           </div>
         </label>
-        
-        <div className="flex justify-center bg-[--Magnolia] p-2 rounded-lg items-center">
-            <p className={`${!isChecked ? "text-[--Marine-blue]" : "text-[--Cool-gray]"} font-semibold text-xs`}>Monthly</p>
-            <label className='themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center'>
-        <input
-          type='checkbox'
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-          className='sr-only'
-        />
-       
-        <span
-          className={`slider mx-4 flex h-5 w-[40px] items-center rounded-full p-1 duration-200 ${
-            isChecked ? 'bg-[#212b36]' : 'bg-[#CCCCCE]'
-          }`}
-        >
-          <span
-            className={`dot h-3 w-3 rounded-full bg-white duration-200 ${
-              isChecked ? 'translate-x-[16px]' : ''
-            }`}
-          ></span>
-        </span>
-        
-      </label>
-            <p className={`${isChecked ? "text-[--Marine-blue]" : "text-[--Cool-gray]"} font-semibold text-xs`}>Yearly</p>
 
+        <div className="flex items-center justify-center rounded-lg bg-[--Magnolia] p-2">
+          <p
+            className={`${
+              !isChecked ? "text-[--Marine-blue]" : "text-[--Cool-gray]"
+            } text-xs font-semibold`}
+          >
+            Monthly
+          </p>
+          <label className="themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center">
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+              className="sr-only"
+            />
+
+            <span
+              className={`slider mx-4 flex h-5 w-[40px] items-center rounded-full p-1 duration-200 ${
+                isChecked ? "bg-[#212b36]" : "bg-[#CCCCCE]"
+              }`}
+            >
+              <span
+                className={`dot h-3 w-3 rounded-full bg-white duration-200 ${
+                  isChecked ? "translate-x-[16px]" : ""
+                }`}
+              ></span>
+            </span>
+          </label>
+          <p
+            className={`${
+              isChecked ? "text-[--Marine-blue]" : "text-[--Cool-gray]"
+            } text-xs font-semibold`}
+          >
+            Yearly
+          </p>
         </div>
-
       </div>
-      
     </>
   );
-  const pages = ["",page1,page2]
+  const page3 = <>
+  <h2 className="text-2xl font-bold text-[--Marine-blue]">
+        Pick add-ons
+      </h2>
+      <p className="text-[--Cool-gray] my-2">
+        Add-ons help enhance your gaming experience.
+      </p>
+      <div className="flex flex-col gap-3 py-2">
+        <label className="flex peer-checked:border-[--Marine-blue] cursor-pointer gap-3 rounded-md border-2 p-2 items-center ">
+            <div><input className="h-4 w-4 peer" type="checkbox" name="online" id="online" /></div>
+            <div className="w-full">
+                <p className="text-sm font-bold text-[--Marine-blue]">Online service</p>
+                <p className="text-xs text-[--Cool-gray]">Access to multiplayer games</p>
+            </div>
+            <p className="text-xs">+$1/mo</p>
+        </label>
+      </div>
+  </>;
+  const pages = ["", page1, page2,page3];
   return (
     <form action="" className="relative  mx-4 rounded-xl bg-white p-7">
       {pages[props.currentPage]}
