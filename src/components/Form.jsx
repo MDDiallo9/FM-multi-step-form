@@ -81,7 +81,10 @@ const Form = (props) => {
               <h3 className="text-sm font-semibold text-[--Marine-blue]">
                 Arcade
               </h3>
-              <p className="text-xs text-[--Cool-gray]">$9/mo</p>
+              <div>
+                  <p className="text-xs text-[--Cool-gray]">{!isChecked ? "$9/mo" : "$90/yr"}</p>
+                  <p className="text-xs text-[--Marine-blue]">{!isChecked ? null : "2 months free"}</p>
+              </div>
             </div>
           </div>
         </label>
@@ -101,7 +104,10 @@ const Form = (props) => {
               <h3 className="text-sm font-semibold text-[--Marine-blue]">
                 Advanced
               </h3>
-              <p className="text-xs text-[--Cool-gray]">$9/mo</p>
+              <div>
+                  <p className="text-xs text-[--Cool-gray]">{!isChecked ? "$12/mo" : "$120/yr"}</p>
+                  <p className="text-xs text-[--Marine-blue]">{!isChecked ? null : "2 months free"}</p>
+              </div>
             </div>
           </div>
         </label>
@@ -121,7 +127,10 @@ const Form = (props) => {
               <h3 className="text-sm font-semibold text-[--Marine-blue]">
                 Pro
               </h3>
-              <p className="text-xs text-[--Cool-gray]">$9/mo</p>
+              <div>
+                  <p className="text-xs text-[--Cool-gray]">{!isChecked ? "$15/mo" : "$150/yr"}</p>
+                  <p className="text-xs text-[--Marine-blue]">{!isChecked ? null : "2 months free"}</p>
+              </div>
             </div>
           </div>
         </label>
