@@ -1,0 +1,11 @@
+#root{
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: hsla(206, 94%, 87%, 0.418);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
