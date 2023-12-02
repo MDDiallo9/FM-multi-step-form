@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Form = (props) => {
+    const [isChecked, setIsChecked] = useState(false)
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked)
+  }
   const page1 = (
     <>
       <h2 className="text-2xl font-bold text-[--Marine-blue]">Personal Info</h2>
@@ -121,14 +126,30 @@ const Form = (props) => {
           </div>
         </label>
         
-        <div className="flex justify-around bg-[--Magnolia] ">
-            <p>Monthly</p>
-            <label className="relative inline-flex items-center mb-5 cursor-pointer">
-              <input type="checkbox" value="" className="sr-only peer"></input>
-              <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-              <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
-            </label>
-            <p>Yearly</p>
+        <div className="flex justify-center bg-[--Magnolia] p-2 rounded-lg items-center">
+            <p className={`${!isChecked ? "text-[--Marine-blue]" : "text-[--Cool-gray]"} font-semibold text-xs`}>Monthly</p>
+            <label className='themeSwitcherTwo relative inline-flex cursor-pointer select-none items-center'>
+        <input
+          type='checkbox'
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+          className='sr-only'
+        />
+       
+        <span
+          className={`slider mx-4 flex h-5 w-[40px] items-center rounded-full p-1 duration-200 ${
+            isChecked ? 'bg-[#212b36]' : 'bg-[#CCCCCE]'
+          }`}
+        >
+          <span
+            className={`dot h-3 w-3 rounded-full bg-white duration-200 ${
+              isChecked ? 'translate-x-[16px]' : ''
+            }`}
+          ></span>
+        </span>
+        
+      </label>
+            <p className={`${isChecked ? "text-[--Marine-blue]" : "text-[--Cool-gray]"} font-semibold text-xs`}>Yearly</p>
 
         </div>
 
