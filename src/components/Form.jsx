@@ -194,14 +194,39 @@ const Form = (props) => {
         Add-ons help enhance your gaming experience.
       </p>
       <div className="flex flex-col gap-3 py-2">
-        <label className="flex peer-checked:border-[--Marine-blue] cursor-pointer gap-3 rounded-md border-2 p-2 items-center ">
-            <div><input className="h-4 w-4 peer" type="checkbox" name="online" id="online" /></div>
-            <div className="w-full">
-                <p className="text-sm font-bold text-[--Marine-blue]">Online service</p>
-                <p className="text-xs text-[--Cool-gray]">Access to multiplayer games</p>
-            </div>
-            <p className="text-xs">+$1/mo</p>
-        </label>
+     
+          <div className="relative">
+              <input className="h-4 w-4 peer absolute bottom-5 left-3" type="checkbox" name="online" id="online" />
+                <label htmlFor="online" className="flex peer-checked:border-[--Marine-blue] cursor-pointer gap-3 rounded-md border-2 p-2 items-center ">
+                    <div className="w-full pl-8">
+                        <p className="text-sm font-bold text-[--Marine-blue]">Online service</p>
+                        <p className="text-xs text-[--Cool-gray]">Access to multiplayer games</p>
+                    </div>
+                    <p className="text-xs text-[--Purplish-blue]">{!isChecked ? "+$1/mo" : "+$10/yr"}</p>
+                </label>
+          </div>
+          <div className="relative">
+              <input className="h-4 w-4 peer absolute bottom-5 left-3" type="checkbox" name="storage" id="storage" />
+                <label htmlFor="storage" className="flex peer-checked:border-[--Marine-blue] cursor-pointer gap-3 rounded-md border-2 p-2 items-center ">
+                    <div className="w-full pl-8">
+                        <p className="text-sm font-bold text-[--Marine-blue]">Larger storage</p>
+                        <p className="text-xs text-[--Cool-gray]">Extra 1TB of cloud drive</p>
+                    </div>
+                    <p className="text-xs text-[--Purplish-blue]">{!isChecked ? "+$2/mo" : "+$20/yr"}</p>
+                </label>
+          </div>
+          <div className="relative">
+              <input className="h-4 w-4 peer absolute bottom-5 left-3" type="checkbox" name="online" id="online" />
+                <label htmlFor="online" className="flex peer-checked:border-[--Marine-blue] cursor-pointer gap-3 rounded-md border-2 p-2 items-center ">
+                    <div className="w-full pl-8">
+                        <p className="text-sm font-bold text-[--Marine-blue]">Customizable profile</p>
+                        <p className="text-xs text-[--Cool-gray]">Custom theme on your profile</p>
+                    </div>
+                    <p className="text-xs text-[--Purplish-blue]">{!isChecked ? "+$2/mo" : "+$20/yr"}</p>
+                </label>
+          </div>
+          
+      
       </div>
   </>;
   const pages = ["", page1, page2,page3];
