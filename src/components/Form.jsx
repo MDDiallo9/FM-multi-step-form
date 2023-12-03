@@ -216,8 +216,8 @@ const Form = (props) => {
                 </label>
           </div>
           <div className="relative">
-              <input className="h-4 w-4 peer absolute bottom-5 left-3" type="checkbox" name="online" id="online" />
-                <label htmlFor="online" className="flex peer-checked:border-[--Marine-blue] cursor-pointer gap-3 rounded-md border-2 p-2 items-center ">
+              <input className="h-4 w-4 peer absolute bottom-5 left-3" type="checkbox" name="profile" id="profile" />
+                <label htmlFor="profile" className="flex peer-checked:border-[--Marine-blue] cursor-pointer gap-3 rounded-md border-2 p-2 items-center ">
                     <div className="w-full pl-8">
                         <p className="text-sm font-bold text-[--Marine-blue]">Customizable profile</p>
                         <p className="text-xs text-[--Cool-gray]">Custom theme on your profile</p>
